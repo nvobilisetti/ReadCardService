@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nareen.myservice.User" table="user_info">
+		<meta attribute="class-description">
+			This class contains the user detail.
+		</meta>
+		<id name="userId" type="int" column="user_id">
+			<generator class="native" />
+		</id>
+		<property name="userName" column="user_name" type="string" />
+		<property name="cardDetails" column="card_details" type="string" />
+		<property name="cardCvv" column="card_cvv" type="string" />
+		<property name="cardExp" column="card_exp" type="int" />
+		<property name="balance" column="card_balance" type="int" />
+		</class>
+</hibernate-mapping>
