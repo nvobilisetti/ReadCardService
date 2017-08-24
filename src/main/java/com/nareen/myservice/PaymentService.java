@@ -20,7 +20,7 @@ public class PaymentService {
 	private final static String FAILURE = "<response>FAILURE</response>";
 
 	@POST
-	@Path("/authenticate")
+	@Path("/authenticate") //TODO: use appropriate naming for REST resource
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_XML)
 	public String authenticate(@FormParam("userName") String userName, @FormParam("cardDetails") String cardDetails,
@@ -29,7 +29,7 @@ public class PaymentService {
 		cardDetails = manageUser.generateHash(cardDetails);
 		cardCvv = manageUser.generateHash(cardCvv);
 		List<User> list = manageUser.userList(userName, cardDetails, cardCvv, cardExp, price);
-		if (manageUser.userList(userName, cardDetails, cardCvv, cardExp, price) != null) {
+		if (list != null) {
 			// Asuming that only one unique entry per table//
 			log.info("yes user foundddd");
 			int userId = list.get(0).getUserId();
