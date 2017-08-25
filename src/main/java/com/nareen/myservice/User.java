@@ -6,8 +6,8 @@ public class User {
 	private String cardDetails;
 	private String cardCvv;
 	private int cardExp;
-	private int balance;
-	public User(String userName, String cardDetails, String cardCvv, int cardExp, int balance) {
+	private long balance;
+	public User(String userName, String cardDetails, String cardCvv, int cardExp, long balance) {
 		this.userName = userName;
 		this.cardDetails = cardDetails;
 		this.cardCvv = cardCvv;
@@ -46,10 +46,10 @@ public class User {
 	public void setCardExp(int cardExp) {
 		this.cardExp = cardExp;
 	}
-	public int getBalance() {
+	public long getBalance() {
 		return balance;
 	}
-	public void setBalance(int balance) {
+	public void setBalance(long balance) {
 		this.balance = balance;
 	}
 	public boolean equals(User user) {

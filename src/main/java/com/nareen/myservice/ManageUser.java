@@ -27,7 +27,7 @@ public class ManageUser {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<User> userList(String userName, String cardDetails, String cardCvv, int cardExp,int price) {
+	public List<User> userList(String userName, String cardDetails, String cardCvv, int cardExp,long price) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		List<User> userDetails = null;
@@ -65,7 +65,7 @@ public class ManageUser {
 		return userId;
 	}
 
-	public void updateBalance(int userId, int balance) {
+	public void updateBalance(int userId, long balance) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		try {

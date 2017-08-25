@@ -15,6 +15,6 @@
 		<property name="cardDetails" column="card_details" type="string" />
 		<property name="cardCvv" column="card_cvv" type="string" />
 		<property name="cardExp" column="card_exp" type="int" />
-		<property name="balance" column="card_balance" type="int" />
+		<property name="balance" column="card_balance" type="long" />
 		</class>
 </hibernate-mapping>
