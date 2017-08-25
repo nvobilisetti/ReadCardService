@@ -20,7 +20,7 @@ public class PaymentService {
 	private final static String FAILURE = "<response>FAILURE</response>";
 
 	@POST
-	@Path("/processpayment") //TODO: use appropriate naming for REST resource
+	@Path("/processpayment")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_XML)
 	public String authenticate(@FormParam("userName") String userName, @FormParam("cardDetails") String cardDetails,
@@ -36,6 +36,7 @@ public class PaymentService {
 			log.info("user id is "+userId);
 			manageUser.updateBalance(userId, (list.get(0).getBalance() - price));
 			log.info("Succefully updated");
+			list.clear();
 			return SUCCESS;
 		} else {
 			log.info("Failed to updated");
